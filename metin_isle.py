@@ -15,6 +15,7 @@ def kucukHarfCevir(sStr):
                 ('İ','i'), ('Ğ','ğ'),('Ü','ü'), ('Ş','ş'), ('Ö','ö'),('Ç','ç'),
                 ('I','ı')
                ]
+
     for aranan, harf in HARFDIZI:
         str = str.replace(aranan, harf)
         str = str.lower()
@@ -46,6 +47,7 @@ def hecele(kelime):
     kelime = unicode(kelime , 'utf8')
     kelime = ''.join([ i for i in kelime if i in sesli or i in sessiz])
     heceler = list()
+
     while True:
         if kelime=='':
             break
@@ -78,30 +80,27 @@ def islem_yapan(cumle):
     for k in kelimeler:
         harf_son = harf_son + harfle(k)
         #harf_son.append(harfle(k))
-        
+
     for i in kelimeler:
         hece_son = hece_son + hecele(i)
         #hece_son.append(hecele(i))
-        
+
     denge = True
     kontrol = list()
     for j in hece_son:
         #dosya = "/home/boncul/Masaüstü/Kodlar/sesler/" + j + ".mp3"
-        
+
         #print u'/home/boncul/Kodlar/sesler/' + j + u'.mp3'
+
         if (os.path.exists(u'/home/boncul/Kodlar/sesler/' + j + u'.mp3') == True):
             #denge = True
             continue
         else:
             denge = False
-            
-        
+
     if (denge == True):
         #hece_son = unicode(hece_son, 'utf8')
         return hece_son
     else:
         #harf_son = unicode(harf_son, 'utf8')
         return harf_son
-
-    
-    

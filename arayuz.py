@@ -1,17 +1,19 @@
 #!/usr/bin/env python
 #-*-coding:utf-8-*-
 
-from Tkinter import *
 import Tkinter,tkFileDialog
+from Tkinter import *
+
 pencere = Tkinter.Tk()
 #pencere = Tk()
-        
 pencere.title("M2SES")
 
 pgen = 300
 pyuks = 300
+
 ekrangen = pencere.winfo_screenwidth()
 ekranyuks = pencere.winfo_screenheight()
+
 x = (ekrangen - pgen) / 2
 y = (ekranyuks - pyuks) / 2
 pencere.geometry("%dx%d+%d+%d"%(pgen, pyuks, x, y))
@@ -43,9 +45,12 @@ giris.delete(0,END)
 
 dugme = Button(text="Dosyadan Oku",command=dosya_al )
 dugme.pack()
+
 dugme = Button(text="Girdiden Oku",command=girdi_al )
 dugme.pack()
+
 #dugme = Button(text="Seslendir",command=seslendir )
 #dugme.pack()
+
 dugme = Button(text="Çık",command=pencere.quit )
 dugme.pack()
